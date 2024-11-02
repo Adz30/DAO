@@ -32,7 +32,7 @@ describe("DAO", () => {
     user = accounts[8];
 
     const Token = await ethers.getContractFactory("Token");
-    token = await Token.deploy("Dapp University", "DAPP", "1000000");
+    token = await Token.deploy("Boom Token", "BMTK", "1000000");
 
     transaction = await token
       .connect(deployer)
