@@ -22,7 +22,7 @@ async function main() {
   const dao = await DAO.deploy(token.address, "500000000000000000000001");
   await dao.deployed()
 
-  console.log(`DAO deployed to: ${doa.address}\n`)
+  console.log(`DAO deployed to: ${dao.address}\n`)
 
 }
 
