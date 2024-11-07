@@ -7,23 +7,22 @@
 const hre = require("hardhat");
 
 async function main() {
-  const NAME = 'Boom Token'
-  const SYMBOL = 'BMTK'
-  const MAX_SUPPLY = '1000000'
+  const NAME = "Boom Token";
+  const SYMBOL = "BMTK";
+  const MAX_SUPPLY = "1000000";
 
   // Deploy Token
-  const Token = await hre.ethers.getContractFactory('Token')
-  let token = await Token.deploy(NAME, SYMBOL, MAX_SUPPLY)
+  const Token = await hre.ethers.getContractFactory("Token");
+  let token = await Token.deploy(NAME, SYMBOL, MAX_SUPPLY);
 
-  await token.deployed()
-  console.log(`Token deployed to: ${token.address}\n`)
+  await token.deployed();
+  console.log(`Token deployed to: ${token.address}\n`);
 
-  const DAO = await hre.ethers.getContractFactory('DAO')
+  const DAO = await hre.ethers.getContractFactory("DAO");
   const dao = await DAO.deploy(token.address, "500000000000000000000001");
-  await dao.deployed()
+  await dao.deployed();
 
-  console.log(`DAO deployed to: ${dao.address}\n`)
-
+  console.log(`DAO deployed to: ${dao.address}\n`);
 }
 
 // We recommend this pattern to be able to use async/await everywhere
