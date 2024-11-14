@@ -1,4 +1,4 @@
-this is my DAO DAPP built with dapp university 
+this is my DAO DAPP built with solidity, javascript and react 
 
 ```shell
 npx hardhat help
